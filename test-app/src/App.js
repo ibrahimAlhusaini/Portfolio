@@ -1,5 +1,4 @@
 import './App.scss';
-import { Routes, Route } from 'react-router-dom';
 import Home from './containers/home';
 import About from './containers/about';
 import Skills from './containers/skills';
