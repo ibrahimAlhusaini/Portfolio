@@ -86,14 +86,16 @@ const CardExample = () => {
     <CCard className="card-example">
       <CCardImage className="card-image" orientation="top" src={ImageOne} />
       <CCardBody className="card-body">
-        <CCardTitle className="card-title">Gym Exercise</CCardTitle>
+        <CCardTitle className="card-title">Gym Tools</CCardTitle>
         <CCardText className="card-text">
-          A small web site It's purpose is to help beginners learn the correct form of each exercise in the gym. 
+          This site sell Gym Tools for people who want to build a home gym. 
         </CCardText>
-
+<a href= "https://github.com/ibrahimAlhusaini/Gym-Store.git">
         <CButton className="card-button" >
-        In-progress
+        Visit
         </CButton>
+ </a>
+        
       </CCardBody>
     </CCard>
 
