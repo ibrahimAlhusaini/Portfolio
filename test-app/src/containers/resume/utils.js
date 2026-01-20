@@ -27,7 +27,7 @@ export const data = {
             title: "Bachelor of Science in Computer Science,",
             subTitle: "Imam Abdulrahman Bin Faisal University",
             description: [
-                "GPA: 4.1 / 5.0",
+                "GPA: 4.2 / 5.0",
                 "Relevant coursework:  Object Oriented Programming, IT lnfrastructure Management, Database Concepts and Design, Operating Systems, Algorithm Analysis and Design, Software Engineering, Web-Based Systems, Mobile Application Programming, Data Mining & Data warehousing", ],
         },
 
