@@ -19,7 +19,7 @@ const skills = [
   {
     icon: <FaServer size={30} color="#28a745" />,
     title: "Backend",
-    details: "PHP, SQL and MySQL, Node.js",
+    details: "PHP, SQL and MySQL",
   },
   {
     icon: <FaBrain size={30} color="#6610f2" />,
