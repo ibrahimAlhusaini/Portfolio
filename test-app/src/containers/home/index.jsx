@@ -19,11 +19,11 @@ const Home = () => {
                 <h1>
                     Hello, I'm Ibrahim Alhusaini
                     <br/>
-                    I am a full stack web developer 
+                    I am a Computer Science graduate with a strong interest in AI, Data Science, and Machine Learning, supported by academic projects and practical experience in software and web development. 
                     <br/>
                     with a solid background in the fundamentals 
                     <br/>
-                    of data science and machine learning.
+                   I am passionate about building data-driven solutions, contributing to impactful work, and continuously developing my technical and professional skills in an innovative environment.
                 </h1>
             </div>
 
