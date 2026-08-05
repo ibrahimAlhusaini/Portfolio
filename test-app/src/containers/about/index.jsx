@@ -57,7 +57,7 @@ const About = () => {
                         }}
                     >
 
-                        <h3> Full stack web development, Data science & Machine learning. </h3>
+                        <h3> Data Scientist, AI Engineer, and Web Developer. </h3>
                         <p>{jobSummary}</p>
 
 
