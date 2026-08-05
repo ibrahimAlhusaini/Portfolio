@@ -26,7 +26,7 @@ const personalDetails = [
     },
 ];
 
-const jobSummary = "Full Stack Web Developer with hands-on experience in building dynamic, responsive, and scalable web applications using modern technologies such as JavaScript, React, Node.js, and Vue 3. Skilled in both front-end and back-end development. Currently expanding expertise in the field of Machine Learning and Data Science, with a keen interest in applying data-driven solutions to real-world problems. Passionate about continuous learning, problem-solving, and building impactful digital experiences."
+const jobSummary = "Computer Science graduate with hands-on experience in machine learning, data preprocessing, predictive modeling, and web development. Built ML pipelines for DDoS detection and encrypted network-traffic classification, evaluating models including Random Forest, XGBoost, SVM, and neural networks. Proficient in Python, SQL, Scikit-learn, Pandas, Power BI, React, and Vue.js."
 
 
 
