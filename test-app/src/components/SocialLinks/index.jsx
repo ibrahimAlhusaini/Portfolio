@@ -18,7 +18,7 @@ const SocialLinks = () => {
         </a>
       </div>
 
-      <a href="..//..//IBRAHIM_ALHUSAINI.pdf" download className="social-links__download-btn">
+      <a href="..//..//IBRAHIM ALHUSAINI CV.pdf" download className="social-links__download-btn">
         <FaDownload className="icon" />
         Download CV
       </a>
