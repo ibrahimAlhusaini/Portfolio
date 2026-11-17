@@ -363,4 +363,44 @@
   .primary-action:not(.footer-cv) { padding: .6875rem .9375rem; }
   .profile-facts div { grid-template-columns: minmax(6.25rem, .42fr) 1fr; }
   .contact-form :is(input, textarea) { padding: .5rem; }
+
+  .wordmark { font-size: 1.2rem; }
+  .site-navigation { gap: 1.65rem; }
+  .site-navigation a { font-size: 1.2rem; }
+  .language-toggle { font-size: 1.05rem; }
+  .motion-toggle { font-size: 1.15rem; }
+
+  .intro-hello { font-size: 1.25rem; }
+  .intro-description { font-size: 1.3rem; line-height: 1.65; }
+  .intro-eyebrow { font-size: .9rem; }
+  .atlas-copy { font-size: 1.05rem; }
+  .planet-label { font-size: 1.05rem; padding: .3rem .5rem; }
+
+  .observatory:not(.has-destination) {
+    .planet--about { --size: 7.8125rem; }
+    .planet--skills { --size: 10.390625rem; }
+    .planet--projects { --size: 14.6875rem; }
+    .planet--resume { --size: 6.71875rem; }
+    .planet--contact { --size: 6.953125rem; }
+  }
+
+  .back-link { font-size: 1.1rem; }
+  .about-role, .personal-heading { font-size: 1.3rem; }
+  .panel-lead { font-size: 1.3rem; }
+  .profile-facts dt, .profile-facts dd { font-size: 1.15rem; }
+  .profile-facts div { padding-block: .6rem; }
+  .skill-groups { gap: .8rem; }
+  .skill-groups section, .project-entry { padding: .8rem; }
+  .skill-groups h3, .project-entry :is(h3, h4) { font-size: 1.25rem; }
+  .skill-groups li { font-size: 1.05rem; padding: .2rem .35rem; }
+  .project-entry p { font-size: 1.2rem; }
+  .project-entry ul { font-size: 1.15rem; }
+  .project-entry a, .contact-links a { font-size: 1.1rem; }
+  .resume-group > h3 { font-size: 1.25rem; }
+  .contact-links { gap: 1rem; }
+  .contact-form { gap: .8rem; }
+  .contact-form label { font-size: 1.15rem; gap: .35rem; }
+  .contact-form :is(input, textarea) { font-size: 1.2rem; padding: .65rem; }
+  .form-status, .email-draft { font-size: 1.1rem; }
+  .primary-action:not(.footer-cv) { font-size: 1.1rem; }
 }
