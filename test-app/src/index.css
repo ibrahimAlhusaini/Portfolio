@@ -1,44 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
 
-
-
-:root{
-    
-
-    --yellow-theme-background-color: #1d1d1d;
-    --yellow-theme-main-color: rgb(64, 66, 236);
-    --yellow-theme-sub-text-color: #ffffff;
-    --yellow-theme-nav-background-color: #181818;
+:root {
+  color-scheme: dark;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #080912;
+  color: #f7eee6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #f9bb8d; outline-offset: 5px; }
+::selection { color: #0b0a12; background: #efac83; }
 
-html {
-
-    font-size: 62.5%;
-    height: 100%;
-}
-
-body {
-    background: var(--yellow-theme-background-color);
-    height: 100%;
-}
-
-#root{
-    height: 100%;
-}
-
-html {
-    scroll-behavior: smooth;
-  }
-  
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
+[lang='ar'] body { font-family: 'Noto Sans Arabic', Tahoma, system-ui, sans-serif; }
