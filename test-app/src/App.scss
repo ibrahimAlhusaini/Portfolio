@@ -340,3 +340,27 @@
   .profile-facts div { grid-template-columns: 72px 1fr; }
 }
 .credential-links { display: flex; flex-wrap: wrap; gap: 5px 14px; }
+
+@media (min-width: 2560px) {
+  html { font-size: 20px; }
+
+  .site-header, .site-footer, .observatory-main { width: min(93%, 96.875rem); }
+  .site-header { min-height: 5.1875rem; }
+  .site-footer { min-height: 4.5rem; }
+  .home-intro, .destination-panel { max-width: 34.375rem; }
+  .atlas { min-height: max(38.75rem, calc(100svh - 9.6875rem)); }
+
+  .planet--about { --size: 6.25rem; }
+  .planet--skills { --size: 8.3125rem; }
+  .planet--projects { --size: 11.75rem; }
+  .planet--resume { --size: 5.375rem; }
+  .planet--contact { --size: 5.5625rem; }
+
+  .language-toggle, .motion-toggle { min-height: 2.375rem; }
+  .motion-toggle { width: 2.375rem; }
+  .social-links a { width: 2.75rem; height: 2.75rem; }
+  .footer-cv { min-height: 2.125rem; padding: .375rem .5625rem; }
+  .primary-action:not(.footer-cv) { padding: .6875rem .9375rem; }
+  .profile-facts div { grid-template-columns: minmax(6.25rem, .42fr) 1fr; }
+  .contact-form :is(input, textarea) { padding: .5rem; }
+}
