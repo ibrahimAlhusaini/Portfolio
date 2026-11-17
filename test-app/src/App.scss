@@ -312,6 +312,8 @@
   .intro-description { max-width: 56ch; }
   .atlas { min-height: clamp(325px, 71vw, 520px); position: relative; width: 100%; max-width: 610px; justify-self: center; }
   .atlas-copy { margin-inline-start: 3%; }
+  .camera { min-height: 340px; }
+  .has-destination .camera { min-height: 0; }
   .has-destination .atlas { display: block; grid-row: 1; min-height: clamp(190px, 43vw, 290px); }
   .has-destination .camera { transform: translate3d(var(--target-x), var(--target-y), 0) scale(2.2); }
   .has-destination .intro { padding-top: 8px; }

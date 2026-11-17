@@ -9,7 +9,7 @@ export const profile = {
 };
 
 export const destinations = [
-  { id: 'about', en: ['About', 'About me'], ar: ['عني', 'نبذة عني'], x: 57, y: 25 },
+  { id: 'about', en: ['About', 'About me'], ar: ['عني', 'نبذة عني'], x: 57, y: 18 },
   { id: 'skills', en: ['Skills', 'Technical skills'], ar: ['مهاراتي', 'المهارات التقنية'], x: 24, y: 45 },
   { id: 'projects', route: 'projects1', en: ['Projects', 'Selected projects'], ar: ['مشاريعي', 'مختارات من مشاريعي'], x: 62, y: 54 },
   { id: 'resume', en: ['Resume', 'Experience & education'], ar: ['السيرة الذاتية', 'الخبرة والتعليم'], x: 32, y: 77 },
