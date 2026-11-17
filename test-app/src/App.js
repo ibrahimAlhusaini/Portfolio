@@ -169,8 +169,10 @@ function App() {
         </div>
 
         <section className="atlas" aria-label={copy.starMap}>
-          <div className="atlas-heading"><span aria-hidden="true">✦</span> {copy.starMap}</div>
-          {!destination && <p className="atlas-hint">{copy.mapHint}</p>}
+          <div className="atlas-copy">
+            <div className="atlas-heading"><span aria-hidden="true">✦</span> {copy.starMap}</div>
+            {!destination && <p className="atlas-hint">{copy.mapHint}</p>}
+          </div>
           <div className="camera" style={camera}>
             <div className="orbits" aria-hidden="true"><i /><i /><i /><i /><b /></div>
             {destinations.map((item) => (
