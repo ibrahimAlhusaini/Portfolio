@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaArrowDown, FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { profile, projects, resume, skills } from './content';
+import { certification, profile, projects, resume, skills } from './content';
+import { sendContactMessage } from './contactThrottle';
 
 const publicFile = (filename) => `${process.env.PUBLIC_URL || ''}/${encodeURIComponent(filename)}`;
 
@@ -11,12 +12,18 @@ function ContactForm({ copy }) {
   async function sendMessage(event) {
     event.preventDefault();
     const form = event.currentTarget;
+    if ([...new FormData(form).values()].some((value) => !String(value).trim())) {
+      setStatus('incomplete');
+      return;
+    }
     setStatus('sending');
 
     try {
-      await emailjs.sendForm('service_8o769i9', 'template_up4nw3y', form, 'jG7XCvmJokOPAE34v');
-      form.reset();
-      setStatus('sent');
+      const sent = await sendContactMessage(() => (
+        emailjs.sendForm('service_8o769i9', 'template_up4nw3y', form, 'jG7XCvmJokOPAE34v')
+      ));
+      if (sent) form.reset();
+      setStatus(sent ? 'sent' : 'rateLimited');
     } catch {
       setStatus('error');
     }
@@ -39,8 +46,7 @@ function ContactForm({ copy }) {
           {status === 'sending' ? copy.sending : copy.send}
         </button>
         <p className="form-status" role="status">
-          {status === 'sent' && copy.sent}
-          {status === 'error' && copy.error}
+          {['sent', 'error', 'incomplete', 'rateLimited'].includes(status) && copy[status]}
         </p>
       </form>
     </>
@@ -94,15 +100,27 @@ export default function DestinationContent({ destination, language, copy }) {
           {Object.entries(resume[language]).map(([category, entries]) => (
             <section className="resume-group" key={category}>
               <h3>{copy[category]}</h3>
-              {entries.map(({ title, subTitle, description }) => (
+              {entries.map(({ title, subTitle, period, description }) => (
                 <article className="project-entry" key={title}>
-                  <h4>{title.replace(/,$/, '')}</h4>
+                  <h4>{title}</h4>
                   <p>{subTitle}</p>
+                  <p><bdi>{period}</bdi></p>
                   <ul>{description.map((item) => <li key={item}>{item}</li>)}</ul>
                 </article>
               ))}
             </section>
           ))}
+          <section className="resume-group">
+            <h3>{copy.certifications}</h3>
+            <article className="project-entry">
+              <h4>{certification[language]}</h4>
+              <p><bdi>{certification.issuer}</bdi> · {certification.date[language]}</p>
+              <div className="credential-links">
+                <a href={certification.href} target="_blank" rel="noreferrer">{copy.verify} <FaArrowUpRightFromSquare /></a>
+                <a href={publicFile(certification.file)} download>{copy.certificate} <FaArrowDown /></a>
+              </div>
+            </article>
+          </section>
         </>
       );
     case 'contact':

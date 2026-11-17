@@ -5,7 +5,6 @@ export const profile = {
   links: [
     { label: 'GitHub', href: 'https://github.com/ibrahimAlhusaini' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ibrahim-alhusaini-2177632b8/' },
-    { label: 'X', href: 'https://x.com/ibrahimcs01' },
   ],
 };
 
@@ -54,8 +53,8 @@ export const projects = [
   },
   {
     name: 'MetaForm GYM',
-    en: 'A fitness analytics application with a research preview for body-weight trends.',
-    ar: 'تطبيق لتحليل بيانات اللياقة، يتضمن معاينة بحثية لاتجاهات وزن الجسم.',
+    en: 'A full-stack fitness platform for tracking workouts and calories, building custom plans, and exploring body-weight and strength trends.',
+    ar: 'منصة لياقة متكاملة لتتبّع التمارين والسعرات، وإنشاء خطط مخصّصة، واستكشاف اتجاهات وزن الجسم والقوة.',
     href: 'https://github.com/ibrahimAlhusaini/MetaForm-GYM',
   },
   {
@@ -81,17 +80,19 @@ export const projects = [
 const arabicResume = {
   experience: [{
     title: 'مطوّر برمجيات',
-    subTitle: 'متدرّب في Kwaidi',
+    subTitle: 'تدريب في شركة Kwaidi',
+    period: '06/2024 – 08/2024',
     description: [
-      'إدارة المشاريع ومتابعة التنفيذ والتنسيق الداخلي.',
-      'استخدام نظام تخطيط موارد المؤسسة وتوثيقه والتعامل مع قواعد البيانات.',
-      'العمل بأدوات Figma وAdobe XD.',
-      'التطوير باستخدام Vue وواجهات API وFlutter وHTML وCSS وJavaScript.',
+      'طوّرت مكوّنات Vue.js ديناميكية وقابلة لإعادة الاستخدام في مشاريع ويب للعملاء، وطبّقت التوجيه والخصائص المحسوبة والمراقِبات والخصائص الممرّرة والسلوك التفاعلي للواجهات.',
+      'أضفت دعم العربية والإنجليزية باتجاهَي الكتابة، والوضعين الداكن والفاتح، ورفع الملفات بأمان باستخدام Vue.js وBootstrap وJSON وCSS.',
+      'بنيت واجهات متجاوبة للحاسب والأجهزة اللوحية والهواتف باستخدام Bootstrap واستعلامات الوسائط في CSS، وأضفت ترقيم الصفحات وعلامات التبويب والعدّادات المتحركة.',
+      'نقلت أجزاء من مشروع Vue.js من JavaScript إلى TypeScript، ودمجت مكوّنات Vuetify، ونشرت المشاريع عبر GitHub وVercel للمراجعة والاختبار المستمرّين.',
     ],
   }],
   education: [{
     title: 'بكالوريوس علوم الحاسب',
     subTitle: 'جامعة الإمام عبدالرحمن بن فيصل',
+    period: '08/2020 – 05/2025',
     description: [
       'المعدل التراكمي ٤٫٢ من ٥٫٠',
       'المقررات ذات الصلة تشمل البرمجة كائنية التوجّه، وإدارة البنية التحتية، وتصميم قواعد البيانات، وأنظمة التشغيل، وتحليل الخوارزميات، وهندسة البرمجيات، وتطوير الويب وتطبيقات الجوال، وتنقيب البيانات ومستودعاتها.',
@@ -100,3 +101,12 @@ const arabicResume = {
 };
 
 export const resume = { en: englishResume, ar: arabicResume };
+
+export const certification = {
+  en: 'IBM Data Science Professional Certificate',
+  ar: 'شهادة IBM المهنية في علوم البيانات',
+  issuer: 'IBM · Coursera',
+  date: { en: 'August 2026', ar: 'أغسطس ٢٠٢٦' },
+  href: 'https://www.coursera.org/verify/professional-cert/0JT16JYV92GG',
+  file: 'IBM Data Science.pdf',
+};

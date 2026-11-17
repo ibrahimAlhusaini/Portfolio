@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaCirclePause, FaCirclePlay, FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { FaArrowLeft, FaArrowRight, FaCirclePause, FaCirclePlay, FaGithub, FaLinkedin } from 'react-icons/fa6';
 import DestinationContent from './space/DestinationContent';
 import Starfield from './space/Starfield';
 import { destinations, profile } from './space/content';
@@ -7,7 +7,7 @@ import { locale } from './space/locale';
 import './App.scss';
 
 const motionQuery = '(prefers-reduced-motion: reduce)';
-const socialIcons = { GitHub: FaGithub, LinkedIn: FaLinkedin, X: FaXTwitter };
+const socialIcons = { GitHub: FaGithub, LinkedIn: FaLinkedin };
 
 function getDestination() {
   const hash = window.location.hash.slice(1);
