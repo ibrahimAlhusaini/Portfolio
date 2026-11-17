@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaCirclePause, FaCirclePlay, FaGithub, FaLinkedin } from 'react-icons/fa6';
+import { FaArrowDown, FaArrowLeft, FaArrowRight, FaCirclePause, FaCirclePlay, FaGithub, FaLinkedin } from 'react-icons/fa6';
 import DestinationContent from './space/DestinationContent';
 import Starfield from './space/Starfield';
 import { destinations, profile } from './space/content';
 import { locale } from './space/locale';
+import { resumeFile } from './space/publicFiles';
 import './App.scss';
 
 const motionQuery = '(prefers-reduced-motion: reduce)';
@@ -181,11 +182,16 @@ function App() {
 
       <footer className="site-footer">
         <p><span aria-hidden="true">✧</span> {copy.location}</p>
-        <div className="social-links" aria-label={copy.social}>
-          {profile.links.map(({ label, href }) => {
-            const Icon = socialIcons[label];
-            return <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer"><Icon /></a>;
-          })}
+        <div className="footer-actions">
+          <div className="social-links" role="group" aria-label={copy.social}>
+            {profile.links.map(({ label, href }) => {
+              const Icon = socialIcons[label];
+              return <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer"><Icon aria-hidden="true" /></a>;
+            })}
+          </div>
+          <a className="primary-action footer-cv" href={resumeFile} download>
+            {copy.cv} <FaArrowDown aria-hidden="true" />
+          </a>
         </div>
       </footer>
     </div>

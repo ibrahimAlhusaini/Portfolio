@@ -1,31 +1,33 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { FaArrowDown, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { certification, profile, projects, resume, skills } from './content';
 import { sendContactMessage } from './contactThrottle';
-
-const publicFile = (filename) => `${process.env.PUBLIC_URL || ''}/${encodeURIComponent(filename)}`;
+import { contactFailure, emailDraft, sendPortfolioEmail } from './contactEmail';
+import { publicFile, resumeFile } from './publicFiles';
 
 function ContactForm({ copy }) {
   const [status, setStatus] = useState('idle');
+  const [draft, setDraft] = useState('');
 
   async function sendMessage(event) {
     event.preventDefault();
     const form = event.currentTarget;
-    if ([...new FormData(form).values()].some((value) => !String(value).trim())) {
+    const fields = new FormData(form);
+    setDraft('');
+    if ([...fields.values()].some((value) => !String(value).trim())) {
       setStatus('incomplete');
       return;
     }
     setStatus('sending');
 
     try {
-      const sent = await sendContactMessage(() => (
-        emailjs.sendForm('service_8o769i9', 'template_up4nw3y', form, 'jG7XCvmJokOPAE34v')
-      ));
+      const sent = await sendContactMessage(() => sendPortfolioEmail(form));
       if (sent) form.reset();
       setStatus(sent ? 'sent' : 'rateLimited');
-    } catch {
-      setStatus('error');
+    } catch (error) {
+      setStatus(contactFailure(error));
+      setDraft(emailDraft(fields));
+      console.warn('Portfolio contact delivery failed', error?.status ?? error?.name ?? 'unknown');
     }
   }
 
@@ -37,7 +39,7 @@ function ContactForm({ copy }) {
         ))}
         <a href={`mailto:${profile.email}`}>{copy.email} <FaArrowUpRightFromSquare /></a>
       </div>
-      <form className="contact-form" onSubmit={sendMessage}>
+      <form className="contact-form" onSubmit={sendMessage} aria-busy={status === 'sending'}>
         <label>{copy.nameLabel}<input name="user_name" autoComplete="name" dir="auto" required /></label>
         <label>{copy.email}<input type="email" name="user_email" autoComplete="email" required /></label>
         <label>{copy.subject}<input name="subject" dir="auto" required /></label>
@@ -46,8 +48,9 @@ function ContactForm({ copy }) {
           {status === 'sending' ? copy.sending : copy.send}
         </button>
         <p className="form-status" role="status">
-          {['sent', 'error', 'incomplete', 'rateLimited'].includes(status) && copy[status]}
+          {status !== 'idle' && copy[status]}
         </p>
+        {draft && <a className="email-draft" href={draft}>{copy.openEmailDraft} <FaArrowUpRightFromSquare /></a>}
       </form>
     </>
   );
@@ -94,7 +97,7 @@ export default function DestinationContent({ destination, language, copy }) {
     case 'resume':
       return (
         <>
-          <a className="primary-action resume-download" href={publicFile('IBRAHIM ALHUSAINI CV.pdf')} download>
+          <a className="primary-action resume-download" href={resumeFile} download>
             {copy.cv} <FaArrowDown />
           </a>
           {Object.entries(resume[language]).map(([category, entries]) => (

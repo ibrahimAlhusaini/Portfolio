@@ -44,7 +44,7 @@
 }
 
 .site-header { min-height: 83px; border-bottom: 1px solid #ddc5d126; }
-.site-footer { min-height: 65px; border-top: 1px solid #ddc5d126; margin-top: auto; }
+.site-footer { min-height: 72px; padding-block: 10px; border-top: 1px solid #ddc5d126; margin-top: auto; flex-wrap: wrap; row-gap: 7px; }
 .wordmark, .site-navigation a, .site-footer a, .back-link { text-decoration: none; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-weight: 700; }
 .wordmark-symbol { color: var(--peach); font-size: 1.9rem; font-weight: 400; line-height: 1; }
@@ -272,11 +272,18 @@
 .contact-form label:nth-child(n+3) { grid-column: 1 / -1; }
 .contact-form :is(input, textarea) { width: 100%; border: 1px solid #e0c7dc55; border-radius: 5px; background: #10111ce8; color: #fff5e9; padding: 8px; }
 .form-status { margin: 0; grid-column: 1 / -1; font-size: .85rem; }
+.form-status:empty { display: none; }
+.email-draft { grid-column: 1 / -1; justify-self: start; color: var(--peach); font-size: .88rem; }
+.email-draft svg { width: .75em; margin-inline-start: 4px; }
 
 .site-footer p { color: #d7c2cc; margin: 0; }
 .site-footer p span { color: var(--peach); margin-inline-end: 6px; }
-.social-links { display: flex; gap: 15px; align-items: center; }
-.social-links a { padding: 5px; display: grid; place-items: center; color: #ecdde6; }
+.footer-actions, .social-links { display: flex; align-items: center; }
+.footer-actions { flex-wrap: wrap; gap: 7px 13px; max-width: 100%; }
+.social-links { gap: 5px; }
+.social-links a { width: 44px; height: 44px; display: grid; place-items: center; color: #ecdde6; font-size: 1.5rem; }
+.footer-cv { min-height: 44px; }
+[dir='rtl'] .footer-cv svg { transform: none; }
 .social-links a:hover { color: var(--peach); }
 .motion-paused :is(.camera, .planet, .planet-surface) { transition: none; }
 .motion-paused .planet-art { animation-play-state: paused; }
@@ -289,7 +296,7 @@
   .site-navigation a { font-size: .76rem; padding-block: 11px; }
   .observatory-main { grid-template-columns: 1fr; align-content: start; }
   .intro { padding: 34px 0 25px; }
-  .home-intro h1 { font-size: clamp(4.1rem, 12.5vw, 7.6rem); }
+  .home-intro h1 { font-size: clamp(3.35rem, 12.5vw, 7.6rem); }
   .intro-eyebrow { margin-bottom: 16px; }
   .intro-description { max-width: 56ch; }
   .atlas { min-height: clamp(325px, 71vw, 520px); position: relative; width: 100%; max-width: 610px; justify-self: center; }
@@ -301,8 +308,20 @@
   .planet-label { top: calc(100% + 6px); font-size: .63rem; padding: 4px 5px; }
   .site-footer { min-height: 56px; }
 }
+@media (max-width: 480px) {
+  .contact-form { grid-template-columns: 1fr; }
+  .site-footer { justify-content: center; }
+  .site-footer p { width: 100%; text-align: center; }
+  .footer-actions { justify-content: center; }
+}
 @media (max-width: 350px) {
-  .wordmark { font-size: .86rem; }
+  .wordmark { font-size: .82rem; gap: 5px; }
+  .wordmark-symbol { font-size: 1.4rem; }
+  .header-controls { gap: 5px; }
+  .language-toggle { padding-inline: 6px; }
+  .motion-toggle { width: 34px; }
+  .planet-label { font-size: .58rem; letter-spacing: 0; }
+  .planet--contact { margin-inline-start: -5px; }
   .site-navigation a { font-size: .68rem; }
   .skill-groups { grid-template-columns: 1fr; }
   .profile-facts div { grid-template-columns: 72px 1fr; }
